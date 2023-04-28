@@ -34,6 +34,8 @@
             // 
             // button1
             // 
+            button1.Font = new Font("맑은 고딕", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkGoldenrod;
             button1.Location = new Point(410, 72);
             button1.Name = "button1";
             button1.Size = new Size(360, 223);

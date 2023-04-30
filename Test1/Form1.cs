@@ -1,4 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace Test1
 {
@@ -13,6 +14,7 @@ namespace Test1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             List<int> IDs = new List<int>();
 
             // 틀 안에 값을 채워
@@ -22,11 +24,17 @@ namespace Test1
 
             var SelectedID = (from ID in IDs
                              where ID >= 5
-                             where ID <= 8 // 어떠어떤 조건인 데이터를
-                             select ID).Take(3);                // 선택해서 가져와
+                             where ID <= 4 
+                             select ID).Take(3);             
+            
+            // 어떤 데이터 묶음을 만들건가.
+            // 데이터 중심 설계
+            // 미래에는 데이터 중심 설계 프로그램을 많이 만들어서
+            // 이 프로그램 끼리 어떤 관계인지
+            
 
 
-            label1.Text = String.Join(", ", SelectedID); // 과연 뭐가 나올까
+            //label1.Text = String.Join(", ", ); // 과연 뭐가 나올까
 
         }
 

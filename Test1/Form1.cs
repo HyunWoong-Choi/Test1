@@ -5,14 +5,7 @@ namespace Test1
 {
     public partial class Form1 : Form
     {
-        전사 버섯;
-        전사 식식;
-        전사 내꺼;
-
-        마법사 융법;
-        마법사 식법;
-        마법사 밍법;
-
+        Dictionary<string, 전사> 전사사전;
 
         public Form1()
         {
@@ -21,59 +14,35 @@ namespace Test1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            내꺼 = new 전사(100, 20);
-            내꺼.Name = "내꺼";
+            전사사전 = new Dictionary<string, 전사>();
 
-            // 식식이
-            식식 = new 전사(100, 20);
-            식식.Name = "식식";
-
-            // 밍밍이
-            버섯 = new 전사(90, 10);
-            버섯.Name = "버섯";
-
-
-            융법 = new 마법사(100, 200);
-            식법 = new 마법사(100, 200);
-            밍법 = new 마법사(100, 200);
-
-
+            전사사전.Add("융전사", new 전사(100, 20));
+            전사사전.Add("식전사", new 전사(100, 20));
+            전사사전.Add("밍전사", new 전사(100, 20));
 
 
             timer1.Enabled = true;
         }
+
+
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            label1.Text = 내꺼.HP.ToString();
-            label2.Text = 식식.HP.ToString();
-            label3.Text = 버섯.HP.ToString();
+            label3.Text = 전사사전["융전사"].HP.ToString();
+            label2.Text = 전사사전["식전사"].HP.ToString();
+            label1.Text = 전사사전["밍전사"].HP.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //전사사전["식식"].공격(전사사전["버섯"]);
-
-            식식.공격(버섯);
-            식식.공격(밍법);
+            전사사전["식전사"].공격(전사사전["밍전사"]);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             /*
-            List<int> nums = new List<int>();
-            List<string> names = new List<string>();
-
-            nums.Add(10);
-            nums.Add(21);
-            nums.Add(33);
-
-
-            names.Add("Ming");
-            names.Add("Sick");
-            names.Add("Yung");
-
-
             List<전사> 전사들 = new List<전사>();
             전사 밍전사 = new 전사(100, 20);
             전사들.Add(밍전사);
@@ -81,7 +50,6 @@ namespace Test1
 
 
             Dictionary<string, 전사> 전사사전 = new Dictionary<string, 전사>();
-
             전사사전.Add( "밍전사", 밍전사);
 
             if (밍전사 == 전사사전["밍전사"])

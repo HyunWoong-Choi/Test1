@@ -23,7 +23,12 @@ namespace Test1
             ATK = 10;
         }
 
-        public void 공격(전사 공격받은놈 )
+        public void 공격(전사 공격받은놈) // 오버로딩
+        {
+            공격받은놈.HP = 공격받은놈.HP - ATK;
+        }
+
+        public void 공격(마법사 공격받은놈 ) // 오버로딩
         {
             공격받은놈.HP = 공격받은놈.HP - ATK;
         }

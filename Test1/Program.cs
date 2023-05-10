@@ -1,3 +1,5 @@
+using Test1.View4;
+
 namespace Test1
 {
     internal static class Program

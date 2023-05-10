@@ -1,4 +1,4 @@
-﻿namespace Test1
+﻿namespace Test1.View4
 {
     partial class Form1
     {
@@ -35,6 +35,7 @@
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             button1 = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -91,11 +92,19 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(577, 52);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1123, 678);
+            Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -115,5 +124,6 @@
         private Label label3;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
+        private TextBox textBox1;
     }
 }
